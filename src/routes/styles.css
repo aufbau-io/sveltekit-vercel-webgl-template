@@ -50,6 +50,17 @@ html {
 	-ms-overflow-style: none;
 } */
 
+::-moz-selection {
+	/* Code for Firefox */
+	color: red;
+	background: yellow;
+}
+
+::selection {
+	color: red;
+	background: yellow;
+}
+
 h1,
 h2,
 h3,
