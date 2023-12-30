@@ -1,6 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import { screenSize } from '$lib/store/store';
 
   // import { hexToWebGLColor } from './webgl/UtilFunctions.js';
   import { setupBackground, drawBackground,  cleanupBackground } from './webgl/Background.js';
