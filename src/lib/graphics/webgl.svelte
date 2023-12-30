@@ -1,9 +1,10 @@
 <script>
   import { onMount } from 'svelte';
+  import { screenSize } from '$lib/store/store';
 
   // import { hexToWebGLColor } from './webgl/UtilFunctions.js';
-  import { setupBackground, drawBackground } from './webgl/Background.js';
-  // import { setupBox, drawBox } from "./webgl/Aura";
+  import { setupBackground, drawBackground,  cleanupBackground } from './webgl/Background.js';
+  // import { setupBox, drawBox, cleanupBox } from "./webgl/Aura";
 
   let canvas;
   let aspectRatio;
@@ -74,10 +75,9 @@
 
     // Cleanup
     return () => {
-      // gl.deleteBuffer(vertexBuffer);
-      // gl.deleteShader(vertexShader);
-      // gl.deleteShader(fragmentShader);
-      // gl.deleteProgram(program);
+      window.removeEventListener('resize', resizeCanvas);
+      cleanupBackground(gl, bg);
+      // cleanupBox(gl, box);
     };
   });
 </script>

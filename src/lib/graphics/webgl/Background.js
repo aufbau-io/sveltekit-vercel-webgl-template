@@ -96,3 +96,8 @@ export function drawBackground(gl, bg, time, aspectRatio) {
 	gl.uniform1f(bg.aspectRatioUniformLocation, aspectRatio);
 	gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
+
+export function cleanupBackground(gl, bg) {
+	gl.deleteProgram(bg.program);
+	gl.deleteBuffer(bg.positionBuffer);
+}

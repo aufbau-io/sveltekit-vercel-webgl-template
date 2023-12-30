@@ -199,3 +199,9 @@ export function drawBox(gl, box, color, time, aspectRatio) {
 	gl.uniform4f(box.colorUniformLocation, ...color, 1.0);
 	gl.drawElements(gl.TRIANGLES, 36, gl.UNSIGNED_SHORT, 0);
 }
+
+export function cleanupBox(gl, box) {
+	gl.deleteBuffer(box.boxBuffer);
+	gl.deleteBuffer(box.cubeIndexBuffer);
+	gl.deleteProgram(box.program);
+}

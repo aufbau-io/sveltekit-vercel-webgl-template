@@ -22,7 +22,7 @@
 
 	function handleScreen() {
 		// screen size
-		screenType.set(getScreenSize());
+		screenSize.set(getScreenSize());
 
 		// device type
 		screenType.set(getDeviceType());
