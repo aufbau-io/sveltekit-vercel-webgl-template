@@ -10,7 +10,7 @@ const bgVertShaderSource = `
 `;
 
 const bgFragShaderSource = `
-  precision lowp float;
+  precision highp float;
   varying vec2 vUv;
   uniform float time;
   uniform float aspectRatio;
