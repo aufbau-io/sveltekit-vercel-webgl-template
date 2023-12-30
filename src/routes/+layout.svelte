@@ -40,7 +40,7 @@
 
 	<link
 		rel="preload"
-		href="/images/aufbau.svg"
+		href="/aufbau.svg"
 		as="image"
 		type="image/svg+xml"
 		crossorigin="anonymous"
