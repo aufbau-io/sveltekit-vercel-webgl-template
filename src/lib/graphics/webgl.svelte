@@ -68,9 +68,11 @@
 
     requestAnimationFrame(render);
 
-    if (gl) {
-        canvas.style.opacity = 1;
-    }
+    // if (gl) {
+    //     canvas.style.opacity = 1;
+    // }
+
+    canvas.style.opacity = 1;
 
     // Cleanup
     return () => {

@@ -35,6 +35,7 @@
 		const module = await import('$lib/graphics/webgl.svelte');
     Geometry = module.default;
 
+		handleScreen();
 		window.addEventListener('resize', () => handleScreen());
 
 		return () => {
