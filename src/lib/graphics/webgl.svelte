@@ -1,8 +1,9 @@
 <script>
   import { onMount } from 'svelte';
 
-  import { hexToWebGLColor } from './webgl/UtilFunctions.js';
+  // import { hexToWebGLColor } from './webgl/UtilFunctions.js';
   import { setupBackground, drawBackground } from './webgl/Background.js';
+  // import { setupBox, drawBox } from "./webgl/Aura";
 
   let canvas;
   let aspectRatio;
@@ -46,6 +47,7 @@
     resizeCanvas(); // Initial resize
 
 		const bg = setupBackground(gl);
+    // const box = setupBox(gl);
 
 		// const white = hexToWebGLColor(0xf0f0f0);
 		// const black = hexToWebGLColor(0x232323);
@@ -58,12 +60,8 @@
 			// gl.clearColor(0, 0, 0, 0);
 			gl.clear(gl.COLOR_BUFFER_BIT);
 
-			drawBackground(
-				gl,
-				bg,
-				performance.now(),
-				aspectRatio
-			);
+			drawBackground(gl, bg, performance.now(), aspectRatio);
+      // drawBox(gl, box, black, performance.now(), aspectRatio);
 
 			requestAnimationFrame(render);
     }
