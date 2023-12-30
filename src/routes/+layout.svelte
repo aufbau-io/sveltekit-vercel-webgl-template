@@ -22,8 +22,10 @@
 
 	onMount(async () => {
 		// webgl
-		const module = await import('$lib/graphics/webgl.svelte');
-		Geometry = module.default;
+    window.onload = async () => {
+        const module = await import('$lib/graphics/webgl.svelte');
+        Geometry = module.default;
+    };
 
 		// device type
 		screenType.set(getDeviceType());
@@ -56,7 +58,11 @@
 
 </svelte:head>
 
-<svelte:component this={Geometry} />
+{#if Geometry}
+    <svelte:component this={Geometry} />
+{:else}
+    <div>Loading WebGL content...</div>
+{/if}
 
 <div class="app">
 

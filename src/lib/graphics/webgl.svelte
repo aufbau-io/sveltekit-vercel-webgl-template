@@ -47,9 +47,8 @@
 
 		const bg = setupBackground(gl);
 
-		const white = hexToWebGLColor(0xff964f);
-		const shadow = hexToWebGLColor(0xe6e6fa);
-
+		// const white = hexToWebGLColor(0xf0f0f0);
+		// const black = hexToWebGLColor(0x232323);
 
     // -------------------------------------------------------------------------
     // RENDER LOOP
