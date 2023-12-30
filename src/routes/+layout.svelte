@@ -46,13 +46,21 @@
 		crossorigin="anonymous"
 	/>
 
-	<link
+	<!-- <link
 		rel="preload"
 		href="/fonts/NB-Architekt-Pro-Bold.woff"
 		as="font"
 		type="font/woff"
 		crossorigin="anonymous"
-	/>
+	/> -->
+
+	<link
+	rel="preload"
+	href="/fonts/Dahlia-Medium.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
 
 </svelte:head>
 

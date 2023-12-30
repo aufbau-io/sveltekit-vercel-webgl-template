@@ -11,6 +11,12 @@
 }
 
 @font-face {
+	font-family: dahlia;
+	src: url(/fonts/Dahlia-Medium.woff2) format('woff2');
+	font-weight: 500;
+}
+
+/* @font-face {
 	font-family: untitled-serif;
 	src: url(/fonts/test-untitled-serif-regular.woff2) format('woff2');
 	font-weight: 400;
@@ -47,4 +53,4 @@
 	src: url(/fonts/test-untitled-serif-bold-italic.woff2) format('woff2');
 	font-weight: 600;
 	font-style: italic;
-}
+} */
