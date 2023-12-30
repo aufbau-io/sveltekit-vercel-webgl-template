@@ -1,12 +1,16 @@
 <script>
+	import './styles.css';
+
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
-	import './styles.css';
 
-	/** @type {import('./$types').LayoutServerData} */
+	import { onMount } from 'svelte';
+	import { screenType, isIframe } from '$lib/store/store';
+	import { getDeviceType } from '$lib/functions/utils';
+
 	export let data;
+	let Geometry;
 
 	$: if (browser && data?.analyticsId) {
 		webVitals({
@@ -15,53 +19,72 @@
 			analyticsId: data.analyticsId
 		});
 	}
+
+	onMount(async () => {
+		// webgl
+		const module = await import('$lib/graphics/webgl.svelte');
+		Geometry = module.default;
+
+		// device type
+		screenType.set(getDeviceType());
+		isIframe.set(window.location !== window.parent.location);
+	});
 </script>
 
+<svelte:head>
+	<title>// aufbau.io.project.default</title>
+	<meta name="description" content="WIP" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="AUFBAU" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link
+		rel="preload"
+		href="/fonts/NB-Architekt-Pro-Light.woff"
+		as="font"
+		type="font/woff"
+		crossorigin="anonymous"
+	/>
+
+	<link
+		rel="preload"
+		href="/fonts/NB-Architekt-Pro-Bold.woff"
+		as="font"
+		type="font/woff"
+		crossorigin="anonymous"
+	/>
+
+</svelte:head>
+
+<svelte:component this={Geometry} />
+
 <div class="app">
-	<Header />
 
 	<main>
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
 </div>
 
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		align-items: center;
+		justify-content: center;
+		height: 100dvh;
+		width: 100%;
 	}
 
 	main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
+		height: 100%;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>
