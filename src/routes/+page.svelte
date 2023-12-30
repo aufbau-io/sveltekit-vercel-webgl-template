@@ -1,11 +1,10 @@
 <script>
 </script>
 
-<img src="/aufbau.svg" alt="aufbau logo" />
+<img src="/aufbau.svg" alt="aufbau logo" width="80" height="20" />
 
 <style>
 	img {
-		width: 80px;
 		object-fit: contain;
 	}
 </style>
