@@ -75,7 +75,7 @@
 {#if Geometry}
     <svelte:component this={Geometry} />
 {:else}
-    <div class="loading">// Loading WebGL content</div>
+    <div class="loading">loading.</div>
 {/if}
 
 <div class="app">
@@ -98,6 +98,11 @@
 
 	.loading {
 		position: absolute;
+		font-style: italic;
+		font-family: serif;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		padding: 10px;
 		font-size: 12px;
 	}
