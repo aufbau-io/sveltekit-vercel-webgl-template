@@ -51,7 +51,6 @@ html {
 } */
 
 ::-moz-selection {
-	/* Code for Firefox */
 	color: red;
 	background: yellow;
 }
