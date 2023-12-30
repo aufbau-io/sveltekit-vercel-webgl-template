@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>aufbau.io.project.default</title>
+	<title>Der logische Aufbau der Web</title>
 	<meta name="description" content="WIP" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="AUFBAU" />
