@@ -69,6 +69,7 @@ h5,
 h6 {
 	font-family: var(--font-header);
 	letter-spacing: 0.1em;
+	margin: 0;
 }
 
 h1 {
