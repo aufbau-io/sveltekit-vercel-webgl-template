@@ -40,11 +40,19 @@
 
 	<link
 		rel="preload"
+		href="/images/aufbau.svg"
+		as="image"
+		type="image/svg+xml"
+		crossorigin="anonymous"
+	/>
+
+	<!-- <link
+		rel="preload"
 		href="/fonts/NB-Architekt-Pro-Light.woff"
 		as="font"
 		type="font/woff"
 		crossorigin="anonymous"
-	/>
+	/> -->
 
 	<!-- <link
 		rel="preload"
@@ -54,20 +62,20 @@
 		crossorigin="anonymous"
 	/> -->
 
-	<link
+	<!-- <link
 	rel="preload"
 	href="/fonts/Dahlia-Medium.woff2"
 	as="font"
 	type="font/woff2"
 	crossorigin="anonymous"
-/>
+/> -->
 
 </svelte:head>
 
 {#if Geometry}
     <svelte:component this={Geometry} />
 {:else}
-    <div class="loading">Loading WebGL content</div>
+    <div class="loading">// Loading WebGL content</div>
 {/if}
 
 <div class="app">

@@ -1,15 +1,14 @@
 <script>
+	import aufbau from "$lib/images/aufbau.svg";
 </script>
 
-<h1>aufbau.</h1>
+<img src={aufbau} alt="aufbau logo" />
 
 <style>
-	h1 {
-		font-weight: 500;
-		letter-spacing: 0.01em;
-		font-size: 24px;
-		font-style: italic;
-		color: var(--background);
+	img {
+		width: 80px;
+		height: 80px;
+		object-fit: contain;
 	}
 </style>
 
