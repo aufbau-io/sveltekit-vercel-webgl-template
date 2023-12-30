@@ -70,6 +70,10 @@
 
     requestAnimationFrame(render);
 
+    if (gl) {
+        canvas.style.opacity = 1;
+    }
+
     // Cleanup
     return () => {
       // gl.deleteBuffer(vertexBuffer);
@@ -94,5 +98,9 @@
   margin: 0;
   border: none;
   z-index: -1;
+
+  /* animations */
+  opacity: 0; /* start invisible */
+  transition: opacity 0.5s ease-in-out;
 }
 </style>

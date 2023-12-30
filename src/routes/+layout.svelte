@@ -22,10 +22,8 @@
 
 	onMount(async () => {
 		// webgl
-    window.onload = async () => {
-        const module = await import('$lib/graphics/webgl.svelte');
-        Geometry = module.default;
-    };
+		const module = await import('$lib/graphics/webgl.svelte');
+    Geometry = module.default;
 
 		// device type
 		screenType.set(getDeviceType());
@@ -34,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>// aufbau.io.project.default</title>
+	<title>aufbau.io.project.default</title>
 	<meta name="description" content="WIP" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="AUFBAU" />
@@ -61,7 +59,7 @@
 {#if Geometry}
     <svelte:component this={Geometry} />
 {:else}
-    <div>Loading WebGL content...</div>
+    <div class="loading">Loading WebGL content</div>
 {/if}
 
 <div class="app">
@@ -80,6 +78,12 @@
 		justify-content: center;
 		height: 100dvh;
 		width: 100%;
+	}
+
+	.loading {
+		position: absolute;
+		padding: 10px;
+		font-size: 12px;
 	}
 
 	main {

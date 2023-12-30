@@ -9,7 +9,7 @@
 		letter-spacing: 0.01em;
 		font-size: 24px;
 		font-style: italic;
-		color: var(--primary);
+		color: var(--background);
 	}
 </style>
 

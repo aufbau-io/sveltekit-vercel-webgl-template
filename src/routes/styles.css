@@ -3,7 +3,7 @@
 
 :root {
 	--font-header: dahlia, serif;
-	--font-body: untitled-serif, serif;
+	--font-body: nb-architekt, serif;
 	--column-width: 42rem;
 	--margin: 20px;
 
@@ -12,10 +12,10 @@
 }
 
 :root {
-	--background: #e0e0e0;
-	--background-50: #e0e0e0ee;
-	--primary: #232323;
-	--primary-50: #232323ee;
+	--background: #232323;
+	--background-50: #23232380;
+	--primary: #d0d0d0;
+	--primary-50: #d0d0d0;
 }
 
 /* body {
@@ -32,6 +32,13 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+
+	font-weight: 400;
+	color: var(--primary);
+	text-transform: none;
+	letter-spacing: 0.1em;
+	line-height: 150%;
+	font-size: 14px;
 }
 
 /* ::-webkit-scrollbar {
@@ -56,16 +63,6 @@ h6 {
 h1 {
 	font-size: 22px;
 	font-weight: 400;
-}
-
-p,
-a {
-	font-weight: 400;
-	color: var(--primary);
-	text-transform: none;
-	letter-spacing: 0.1em;
-	line-height: 150%;
-	font-size: 14px;
 }
 
 a {
