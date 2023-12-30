@@ -6,8 +6,8 @@
 	import { webVitals } from '$lib/vitals';
 
 	import { onMount } from 'svelte';
-	import { screenType, isIframe } from '$lib/store/store';
-	import { getDeviceType } from '$lib/functions/utils';
+	import { screenType, isIframe, screenSize } from '$lib/store/store';
+	import { getDeviceType, getScreenSize } from '$lib/functions/utils';
 
 	export let data;
 	let Geometry;
@@ -20,14 +20,26 @@
 		});
 	}
 
+	function handleScreen() {
+		// screen size
+		screenType.set(getScreenSize());
+
+		// device type
+		screenType.set(getDeviceType());
+		isIframe.set(window.location !== window.parent.location);
+	} 
+
+
 	onMount(async () => {
 		// webgl
 		const module = await import('$lib/graphics/webgl.svelte');
     Geometry = module.default;
 
-		// device type
-		screenType.set(getDeviceType());
-		isIframe.set(window.location !== window.parent.location);
+		window.addEventListener('resize', () => handleScreen());
+
+		return () => {
+			window.removeEventListener('resize', () => handleScreen());
+		};
 	});
 </script>
 

@@ -16,3 +16,9 @@ export function getDeviceType() {
 		return 3;
 	}
 }
+
+export function getScreenSize() {
+	const width = window.innerWidth;
+	const height = window.innerHeight;
+	return { width, height };
+}
