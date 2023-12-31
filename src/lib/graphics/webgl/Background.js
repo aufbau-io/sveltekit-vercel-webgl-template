@@ -30,8 +30,8 @@ const bgFragShaderSource = `
 
     // Define pastel colors directly in the shader
     // vec3 sunshade = vec3(1.0, 0.5882, 0.3098); // sunshade
-    // vec3 primary = vec3(0.9, 0.4882, 0.3098);
-    vec3 primary = vec3(1.0, 0.5882, 0.3098);
+    vec3 primary = vec3(0.9, 0.4882, 0.3098);
+    /// vec3 primary = vec3(1.0, 0.5882, 0.3098);
     vec3 pastel1 = vec3(1.0, 0.7137, 0.7569); // Pastel pink
     vec3 pastel2 = vec3(0.5961, 1.0, 0.5961); // Mint green
     vec3 pastel3 = vec3(0.9020, 0.9020, 0.9804); // Lavender
