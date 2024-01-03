@@ -86,8 +86,6 @@ export function setupBackground(gl) {
 
 export function drawBackground(gl, bg, time, aspectRatio) {
 	gl.useProgram(bg.program);
-	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
 	gl.bindBuffer(gl.ARRAY_BUFFER, bg.positionBuffer);
 	gl.vertexAttribPointer(bg.positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
 	gl.enableVertexAttribArray(bg.positionAttributeLocation);
