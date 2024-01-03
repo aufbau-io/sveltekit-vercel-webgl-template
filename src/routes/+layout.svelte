@@ -106,7 +106,9 @@
 		align-items: center;
 		justify-content: center;
 		height: 100dvh;
+		max-height: 100vh;
 		width: 100%;
+		overflow: hidden;
 	}
 
 	.loading {
