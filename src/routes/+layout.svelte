@@ -27,13 +27,12 @@
 		// device type
 		screenType.set(getDeviceType());
 		isIframe.set(window.location !== window.parent.location);
-	} 
-
+	}
 
 	onMount(async () => {
 		// webgl
 		const module = await import('$lib/graphics/webgl.svelte');
-    Geometry = module.default;
+		Geometry = module.default;
 
 		handleScreen();
 		window.addEventListener('resize', () => handleScreen());
@@ -46,18 +45,12 @@
 
 <svelte:head>
 	<title>Der logische Aufbau der Web</title>
-	<meta name="description" content="WIP" />
+	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="AUFBAU" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link
-		rel="preload"
-		href="/aufbau.svg"
-		as="image"
-		type="image/svg+xml"
-		crossorigin="anonymous"
-	/>
+	<link rel="preload" href="/aufbau.svg" as="image" type="image/svg+xml" crossorigin="anonymous" />
 
 	<!-- <link
 		rel="preload"
@@ -82,21 +75,18 @@
 	type="font/woff2"
 	crossorigin="anonymous"
 /> -->
-
 </svelte:head>
 
 {#if Geometry}
-    <svelte:component this={Geometry} />
+	<svelte:component this={Geometry} />
 {:else}
-    <div class="loading">loading.</div>
+	<div class="loading">loading.</div>
 {/if}
 
 <div class="app">
-
 	<main>
 		<slot />
 	</main>
-
 </div>
 
 <style>
@@ -132,5 +122,4 @@
 		width: 100%;
 		height: 100%;
 	}
-
 </style>
